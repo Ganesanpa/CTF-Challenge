@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Crypto CTF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Welcome to Your Dashboard</h2>
+    <p>Here are the available challenges for you:</p>
+
+    <div class="challenges">
+      <ul>
+        {% for challenge in challenges %}
+  <li>
+    <a href="{{ url_for('main.challenge', id=challenge.id) }}">
+      Challenge {{ challenge.id }}: {{ challenge.title }}
+    </a>
+  </li>
+{% endfor %}
+
+      </ul>
+    </div>
+
+    <div class="user-info">
+      <p>Logged in as: <strong>{{ user.username }}</strong></p>
+      <p><a href="{{ url_for('main.logout') }}">Logout</a></p>
+    </div>
+  </div>
+  <a href="{{ url_for('main.scoreboard') }}">View Leaderboard</a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard</title>
+</head>
+<body>
+  <h1>Leaderboard</h1>
+  <ol>
+    {% for user in leaderboard %}
+      <li>{{ user.username }} - {{ user.solved_challenges|length }} points</li>
+    {% endfor %}
+  </ol>
+  <a href="{{ url_for('main.index') }}">Back to Dashboard</a>
+</body>
+</html>
