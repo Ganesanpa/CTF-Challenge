@@ -1,2 +1,2 @@
 # CTF-Challenge
-fllask project folder
+flask project folder
